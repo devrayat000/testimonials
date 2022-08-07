@@ -1,12 +1,24 @@
-<script>
+<script lang="ts">
 	import Testimonial from '$lib/components/testimonial.svelte';
 	import daniel from '$lib/images/image-daniel.jpg';
 	import jonathan from '$lib/images/image-jonathan.jpg';
 	import jeanette from '$lib/images/image-jeanette.jpg';
 	import patrick from '$lib/images/image-patrick.jpg';
 	import kira from '$lib/images/image-kira.jpg';
+	import preview from '$lib/demo/desktop-preview.jpg';
 </script>
 
+<svelte:head>
+	<title>Testimonials</title>
+	<meta name="og:title" content="Testimonials" />
+	<meta name="og:image" content={preview} />
+	<meta name="og:image:alt" content="Desktop Preview" />
+	<link rel="preload" href={daniel} />
+	<link rel="preload" href={jonathan} />
+	<link rel="preload" href={jeanette} />
+	<link rel="preload" href={patrick} />
+	<link rel="preload" href={kira} />
+</svelte:head>
 <main class="px-8 py-16 md:px-32 md:min-h-screen my-auto bg-neutral-light-grayish-blue">
 	<section class="grid md:grid-cols-4 gap-6">
 		<Testimonial
